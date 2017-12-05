@@ -8,3 +8,4 @@
 - group by 语句和SQL 不一样，如果有 group by 语句，select 的字段要么在 group by 中，要么在聚合函数如 sum, avg 中
 - 查分区表要加分区限制
 - w3school 学习SQL语法
+- Hive中strict模式下限制：分区、order by、笛卡尔积
