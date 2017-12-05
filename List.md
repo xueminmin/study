@@ -1,4 +1,4 @@
-# study list
+# TO DO list
 - hive语法和SQL 语法
 - 可视化工具 tableau
 - Excel数据建模
