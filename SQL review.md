@@ -7,4 +7,7 @@
 - select top 5 列名 from 表名 适用于SQL SERVER /ACCESS 
 - select 列名 from 表名 fetch first 5 row only  适用于DB2
 - select 列名 from 表名 where rownum <=5 适用于oracle
-- 
+- select 列名 from 表名  limit 5  适用于mysql mariaDB postgresql，SQLite
+-  select 列名 from 表名 limit 5 offset XX     limit指定返回的行数，limit带的offset指定从哪开始，第一行是0，limit 1 offset 1 会检索第2行
+- 注释 ： --行内注释 ；；#开头一整行都是注释；/*多行注释*/
+--
