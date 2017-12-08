@@ -1,4 +1,4 @@
-# SQL 语法
+201# SQL 语法
 - SQL structured query language
 - select 列名，列名/*  from 库.表
 - 不区分大小写，一般空格会被忽略
@@ -23,7 +23,14 @@
 % 任何字段出现任意次数 select X fom X where x like 'XX%' 以xx开头  'xx% xx%'   'x%x'  
 _ 任何字符出现一次，用法和%一致
 注意ascess 数据库和%相同作用的是*  ， 和_ 相同作用的？
-
+- 创建计算字段 +链接字段 字符都可以， as别名 ，字段和字段可以加减乘除
+-使用函数：文本处理函数 left返回左边字符，right返回右边字符，length返回字符串长度，lower字符串转小写，ltrim去掉字符串左边的空格，rtrim去掉字符串右边的空格，upper字符串转为大写
+- soundex 返回字符串的soundex值，将任意文本串转换为描述其语音表示的字母数字模式
+select cust_name ,cust_contact from customers where soundex(cus_contact) =soundex('michael green')  这可以避免输入错误导致的查询不到
+- 日期时间处理函数 datepart： select order-num from orders where datepart(yy,order-date) =2014 检索出2014年的订单  在oracle中没有datepart函数，
+select order-num from orders where to_number(to_char(order_date,'YYYY')) =2014  ,to_char 提取日期成分 ，to_number 将提取的成分转换成数值以便和2014比较
+- 使用between and 实现上述检索2014年的订单 select order-num from orders where order_date between to_date('01-01-2014')and to_date('12-31-2012')
+- 
  
 
 
