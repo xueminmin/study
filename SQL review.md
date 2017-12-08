@@ -37,7 +37,12 @@ select order-num from orders where to_number(to_char(order_date,'YYYY')) =2014  
 - having ：使用同where ，where 在分组前过滤行，having 在分组后过滤分组
 - 在where中子查询： select X FROM X where  X in (select X FROM X where  X ) 执行的时候从内向外处理，注意作为子查询的select 语句只能查询单个列
 - 创建计算字段使用子查询： select cust_name , cust_state,(select count(*) from orders where orders.cust_id = customers.cust_id) as order from customers  （）内的子查询对每个查询出的cust_name 执行一次 ，需要使用完全限制列名
-- 联结表
+- 联结表 select x ,x,x, from x ,x ,where X.X = X.x 等值联结，也称内联结
+- inner join:select x,x,x from X inner join X on X.x=X.x
+- 联结多个表：  select x ,x,x, from x ,x，x where X.X = X.x AND  X.X = X.x AND  X.X = X.x
+- 使用别名：select x ,x,x, from x as a ,x as b where a.X = b.x 
+（oracle 不支持as ，省略as 即可制定别名）
+- 
 
 
  
