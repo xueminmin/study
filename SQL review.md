@@ -60,7 +60,11 @@ select order-num from orders where to_number(to_char(order_date,'YYYY')) =2014  
 - 使用视图简化SQL 查询，视图是虚拟的表，使用同表 create view 视图名称（必须是新的，不能和表名或者其他的视图名一致） as select x，x from xx where x and x 这里select 可以使用所有的语句 ，可以将多个表的复杂join做成一个视图，从而简化以后的查询，注意视图没有数据，每次使用的时候是吧select x from 视图的条件加到创建视图的条件上，所以基础表有变化的时候，视图检索出的数据也变化
 - drop view 视图名称
 - mysql 5 开始支持视图好存储过程
+- 约束：主键 外键 唯一约束 检查约束 create table 表名（列名，数据类型，not null primary key，列名 ，数据类型，not null references 外键的表名（列名），列名，数据类型 not null unique， 列名 数据类型  not null check （列名>0 等各类约束条件）。。。）
+alter table 表名 add constraint primary key （列名）
+alter table 表名 add constraint foreign key （列名） reference 外键的表名（列名）查约束 add constraint check （列名 like'[MF]'）这一列只包含M或者F等各种约束
 - 
+
   
 
 
