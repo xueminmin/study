@@ -1,4 +1,4 @@
-201# SQL 语法
+### SQL 语法
 - SQL structured query language
 - select 列名，列名/*  from 库.表
 - 不区分大小写，一般空格会被忽略
