@@ -42,9 +42,13 @@ select order-num from orders where to_number(to_char(order_date,'YYYY')) =2014  
 - 联结多个表：  select x ,x,x, from x ,x，x where X.X = X.x AND  X.X = X.x AND  X.X = X.x
 - 使用别名：select x ,x,x, from x as a ,x as b where a.X = b.x 
 （oracle 不支持as ，省略as 即可制定别名）
-- inner join 能对应上的，left out join 左边的表是全部 ，right out join 右边的表全部 ,full join 两个表全部
+- inner join 能对应上的，left outer join 左边的表是全部 ，right outer join 右边的表全部 ,full outer join 两个表全部
+- select x ,x from x  where x union select x, x from x where x === selct x from x where x or x   union每个查询必须有相同的列，表达式或者聚集函数，各个列没必要用相同的次序出现，列的数据类型必须兼容（类型不必完全相同，但是需要是可以隐含转换的，比如不同的日期类型，不同的数值类型）
+- union 自动去除了重复的行，使用union all 会保留重复的行，where 实现不了union all 的功能
+- 使用union 组合查询的时候，语句的最后可以使用一条order by 子句，对所有的子句进行排序，注意只能在最后使用一条order by ，不能在union 中的每个查询中使用
+- union 还有两种类型:EXCEPT(有时候称作 MINUS)用于检索在第一个表中存在，第二个表中不存在的行；intersect 检索两个表中都存在的行。使用很少，因为利用join实现比较方便
 - 
- 
+  
 
 
  
