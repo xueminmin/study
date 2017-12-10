@@ -42,7 +42,9 @@ select order-num from orders where to_number(to_char(order_date,'YYYY')) =2014  
 - 联结多个表：  select x ,x,x, from x ,x，x where X.X = X.x AND  X.X = X.x AND  X.X = X.x
 - 使用别名：select x ,x,x, from x as a ,x as b where a.X = b.x 
 （oracle 不支持as ，省略as 即可制定别名）
+- inner join 能对应上的，left out join 左边的表是全部 ，right out join 右边的表全部 ,full join 两个表全部
 - 
+ 
 
 
  
