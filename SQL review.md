@@ -51,6 +51,10 @@ select order-num from orders where to_number(to_char(order_date,'YYYY')) =2014  
 - insert into table (列名，列名,列名) values （'x','x',null），值和列名一一对应，即使表的结构更改了，也不会影响使用，可以省略列，省略的列必须允许为空或者有默认值
 - insert into table 1 (列名，列名) select （列名，列名） from table 2 where X 将查询结果插入另一个表中，select查询多少行就插入多少行，可以是0行;列名不需要对应，使用的是select 后列的位置来对应前面insert 的列名，第一列对应insert的第一个列名。
 - select 列名  into 一个新的表 ，执行语句后创建的，有的也可以覆盖已经存在的表 from table;; mysql 等需要使用： creat table 表名 as select 列名 from table  任何select 选项和子句都可以使用，包括 where ，group by ，可以使用join从多个表中检索数据， 但是只能插入一个表中
+- update 表名 set 列名= x，列名= x where x   注意必须要有where，否则会更新所有的行，可以set 列名 = null 来清空一个值
+- delect from 表名 where x
+- creat table 表名（注意必须是新的表名，不能更新已经存在的表）
+- （ 列名 数据类型 not null default X， 列名 数据类型 null default x）  数据类型比如char（10） varchae（100），不指定null ，not null 一般是默认允许null，可以用指定默认的值来获取添加时间等时间戳，比如mysql 用 current_date()
 - 
   
 
