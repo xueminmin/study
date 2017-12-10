@@ -56,7 +56,7 @@ select order-num from orders where to_number(to_char(order_date,'YYYY')) =2014  
 - creat table 表名（注意必须是新的表名，不能更新已经存在的表）
 - （ 列名 数据类型 not null default X， 列名 数据类型 null default x）  数据类型比如char（10） varchae（100），不指定null ，not null 一般是默认允许null，可以用指定默认的值来获取添加时间等时间戳，比如mysql 用 current_date()
 - alter table 表名 add 列名 数据类型   altertable 表名 drop column  列名  alter table 在每种数据库中使用的方法不一致
-- drop table 表名 永久的删除表，删除的时候没有确认，不可撤销，使用的时候要注意
+- drop table 表名 永久的删除表，删除的时候没有确认，不可撤销，使用的时候要注意；delete  from 表名 然后可以执行 roll back 回滚
 - 使用视图简化SQL 查询，视图是虚拟的表，使用同表 create view 视图名称（必须是新的，不能和表名或者其他的视图名一致） as select x，x from xx where x and x 这里select 可以使用所有的语句 ，可以将多个表的复杂join做成一个视图，从而简化以后的查询，注意视图没有数据，每次使用的时候是吧select x from 视图的条件加到创建视图的条件上，所以基础表有变化的时候，视图检索出的数据也变化
 - drop view 视图名称
 - mysql 5 开始支持视图好存储过程
