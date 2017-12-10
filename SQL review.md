@@ -47,6 +47,10 @@ select order-num from orders where to_number(to_char(order_date,'YYYY')) =2014  
 - union 自动去除了重复的行，使用union all 会保留重复的行，where 实现不了union all 的功能
 - 使用union 组合查询的时候，语句的最后可以使用一条order by 子句，对所有的子句进行排序，注意只能在最后使用一条order by ，不能在union 中的每个查询中使用
 - union 还有两种类型:EXCEPT(有时候称作 MINUS)用于检索在第一个表中存在，第二个表中不存在的行；intersect 检索两个表中都存在的行。使用很少，因为利用join实现比较方便
+- insert into table values('X','X',null,'X') 表中的每一列都必须给出，某列没有值的话需要用null，这样比较危险，建议指定列名后插入
+- insert into table (列名，列名,列名) values （'x','x',null），值和列名一一对应，即使表的结构更改了，也不会影响使用，可以省略列，省略的列必须允许为空或者有默认值
+- insert into table 1 (列名，列名) select （列名，列名） from table 2 where X 将查询结果插入另一个表中，select查询多少行就插入多少行，可以是0行;列名不需要对应，使用的是select 后列的位置来对应前面insert 的列名，第一列对应insert的第一个列名。
+- select 列名  into 一个新的表 ，执行语句后创建的，有的也可以覆盖已经存在的表 from table;; mysql 等需要使用： creat table 表名 as select 列名 from table  任何select 选项和子句都可以使用，包括 where ，group by ，可以使用join从多个表中检索数据， 但是只能插入一个表中
 - 
   
 
