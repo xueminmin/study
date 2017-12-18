@@ -6,5 +6,4 @@
 %f	浮点数
 %s	字符串
 %x	十六进制整数
-为了保证中文被正常识别，编码前输入#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+为了保证中文被正常识别，编码前输入 #!/usr/bin/env python3   # -*- coding: utf-8 -*-
