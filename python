@@ -1,4 +1,4 @@
-### 字符串
+## 字符串
 >>> 'Hello, %s' % 'world'
 'Hello, world'
 >>> 'Hi, %s, you have $%d.' % ('Michael', 1000000)
